@@ -1,16 +1,16 @@
-
 $button-color-bg: #3a68b8;
-$bc: cyan;
+$txt-clr: #ffffff;
+
 * {
     margin: 0;
     padding: 0;
     outline: none;
     box-sizing: border-box;
+    text-decoration: none;
   }
   
   body {
     background-color: #020a18;
-    // margin: 0 35px;
   }
   
   .header {
@@ -24,10 +24,6 @@ $bc: cyan;
     justify-content: center;
   }
 
-  .menu_link:hover {
-    background-color: $button-color-bg;
-    border-radius: 10px;
-  }
   .container {
     margin: 0 auto;
     width: 1146px;
@@ -38,69 +34,58 @@ $bc: cyan;
     align-items: center;
   }
   
-  .menu_link {
-    text-decoration: none;
-    color: #fff;
+  @mixin txt-open-sans ($fw, $fs, $lh, $fc) {
     font-family: "Open Sans";
     font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
+    font-weight: $fw;
+    font-size: $fs;
+    line-height: $lh;
+    color: $fc;
+}
+
+  .menu_link {
+    @include txt-open-sans(600, 16px, 100%, $txt-clr);
     padding: 40px 20px;
+    
+  }
+
+  .menu_link:hover {
+    background-color: $button-color-bg;
+    border-radius: 10px;
+    
   }
   
   .mini-header_cont {
-    font-family: "Open Sans";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 160%;
+    @include txt-open-sans(600, 16px, 160%, #3a68b8);
     text-transform: uppercase;
-    color: #3a68b8;
     margin-bottom: 10px;
   }
   
   .header-cont {
-    font-family: "Open Sans";
-    font-style: normal;
-    font-weight: 800;
-    font-size: 55px;
-    line-height: 130%;
-    color: #ffffff;
+    @include txt-open-sans(800, 55px, 130%, $txt-clr);
     margin-bottom: 40px;
   }
   
   .par-cont {
     width: 558px;
-    font-family: "Open Sans";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 160%;
-    color: #ffffff;
+    @include txt-open-sans(600, 18px, 160%, $txt-clr);
     opacity: 0.7;
     margin-bottom: 50px;
   }
   
-  
-  
-  .index_button {
-    padding: 15px 30px;
-    background: $button-color-bg;
-    border-radius: 5px;
-    gap: 10px;
-    color: #ffffff;
-    font-family: "Open Sans";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 27px;
-  }
-  
-  .index_button:hover {
-    color: #3a68b8;
-    background-color: #fff;
-  }
-  
+ 
+  .button {
+      padding: 15px 30px;
+      margin-right: 20px;
+      background: $button-color-bg;
+      border-radius: 5px;
+      @include txt-open-sans(600, 20px, 27px, $txt-clr);
+      &_hover:hover {
+        color: #3a68b8;
+        background-color: #fff;
+      }
+    }
+
   .bar {
     display: flex;
     flex-direction: row;
@@ -124,38 +109,21 @@ $bc: cyan;
   .first_middle_header {
     margin-top: 117px;
     margin-bottom: 30px;
-    font-family: "Open Sans";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 130%;
-    color: #ffffff;
+    @include txt-open-sans(700, 40px, 130%, $txt-clr);
   }
   
   .first_middle_cont {
     width: 460px;
     margin-bottom: 50px;
-    font-family: "Open Sans";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 160%;
-    color: #ffffff;
+    @include txt-open-sans(600, 16px, 160%, $txt-clr);
     opacity: 0.7;
   }
   
-  .first_middle_button {
-    padding: 15px 30px;
-    background: #3a68b8;
-    border-radius: 5px;
-    font-family: "Open Sans";
-    font-style: normal;
-    font-weight: 600;
+  .middle_button {
     font-size: 16px;
     line-height: 22px;
-    color: #ffffff;
   }
-  
+ 
   .first_middle {
     margin-top: 157px;
     margin-bottom: 264px;
@@ -165,38 +133,35 @@ $bc: cyan;
     width: 485px;
   }
   
+.txt-cntr-opc {
+  text-align: center;
+  opacity: 0.7;
+}
+
   .item_head {
     margin: 30px;
-    font-family: "Open Sans";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 25px;
-    line-height: 125%;
-    text-align: center;
-    color: #ffffff;
-    opacity: 0.7;
+    @include txt-open-sans(700, 25px, 125%, $txt-clr);
+    @extend .txt-cntr-opc;
   }
   
   .item_cont {
     margin: 0 30px 30px 30px;
-    font-family: "Open Sans";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 160%;
-    text-align: center;
-    color: #ffffff;
-    opacity: 0.7;
+    @include txt-open-sans(600, 16px, 160%, $txt-clr);
+    @extend .txt-cntr-opc;
   }
   
   .item_icon {
     margin: 30px 132px 0px;
   }
   
+.color-rad {
+  border-radius: 10px;
+  background-color: #132035;
+}
+
   .item {
-    border-radius: 10px;
     width: 362px;
-    background-color: #132035;
+    @extend .color-rad;
   }
   
   .bottom_table {
@@ -204,9 +169,8 @@ $bc: cyan;
     margin-bottom: 243px;
   }
   .big {
-    border-radius: 10px;
     width: 754px;
-    background-color: #132035;
+    @extend .color-rad;
   }
   .big_icon {
     width: 306px;
@@ -215,26 +179,14 @@ $bc: cyan;
   }
   .item_head_big {
     margin: 60px 30px;
-    font-family: "Open Sans";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 25px;
-    line-height: 125%;
-    text-align: center;
-    color: #ffffff;
-    opacity: 0.7;
+    @include txt-open-sans(700, 25px, 125%, $txt-clr);
+    @extend .txt-cntr-opc;
   }
   
   .item_cont_big {
     margin: 0px 30px 144px;
-    font-family: "Open Sans";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 160%;
-    text-align: center;
-    color: #ffffff;
-    opacity: 0.7;
+    @include txt-open-sans(600, 16px, 160%, $txt-clr);
+    @extend .txt-cntr-opc;
   }
   
   .bottom_table_right {
@@ -252,23 +204,13 @@ $bc: cyan;
   .second_middle_header {
     margin-top: 14px;
     margin-bottom: 40px;
-    font-family: "Open Sans";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 130%;
-    color: #ffffff;
+    @include txt-open-sans(700, 40px, 130%, $txt-clr);
   }
   
   .second_middle_cont {
     margin-bottom: 20px;
     width: 460px;
-    font-family: "Open Sans";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 160%;
-    color: #ffffff;
+    @include txt-open-sans(600, 16px, 160%, $txt-clr);
     opacity: 0.7;
   }
   .par_bottom {
@@ -282,36 +224,31 @@ $bc: cyan;
   .foot_item {
     width: 362px;
   }
+  @mixin txt-roboto ($fw, $fs, $lh, $fc) {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: $fw;
+    font-size: $fs;
+    line-height: $lh;
+    color: $fc;
+}
+
   .foot_head {
     margin-top: 48px;
     margin-bottom: 33px;
-    font-family: "Roboto";
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 19px;
-    color: #ffffff;
+    @include txt-roboto(500, 16px, 19px, $txt-clr);
   }
   
   .first_foot_iten,
   .foot_item_right_up {
     margin-bottom: 25px;
-    font-family: "Roboto";
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 16px;
-    color: #ffffff;
+    @include txt-roboto(500, 14px, 16px, $txt-clr);
   }
   
   .foot_item_middle {
     width: 261px;
-    font-family: "Roboto";
+    @include txt-roboto(100, 14px, 16px, $txt-clr);
     font-style: italic;
-    font-weight: 100;
-    font-size: 14px;
-    line-height: 16px;
-    color: #ffffff;
     opacity: 0.6;
   }
   
@@ -322,11 +259,5 @@ $bc: cyan;
   .fa,
   .fas {
     margin-right: 10px;
-    font-family: "Roboto";
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 16px;
-    color: #ffffff;
+    @include txt-roboto(500, 14px, 16px, $txt-clr);
   }
-  
