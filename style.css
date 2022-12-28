@@ -8,6 +8,7 @@
 
 body {
   background-color: #020a18;
+  padding: 0 3%;
 }
 
 .header {
@@ -23,12 +24,7 @@ body {
 
 .container {
   margin: 0 auto;
-  width: 1146px;
-}
-
-.content {
-  display: flex;
-  align-items: center;
+  max-width: 1146px;
 }
 
 .menu_link {
@@ -89,6 +85,18 @@ body {
   justify-content: space-between;
 }
 
+.content {
+  align-items: center;
+}
+
+.content_left {
+  width: 53%;
+}
+
+.content_right {
+  min-width: 45%;
+}
+
 .mini-header_cont {
   font-family: "Open Sans";
   font-style: normal;
@@ -111,7 +119,7 @@ body {
 }
 
 .par-cont {
-  width: 558px;
+  width: 92.2%;
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 600;
@@ -120,14 +128,6 @@ body {
   color: #ffffff;
   opacity: 0.7;
   margin-bottom: 50px;
-}
-
-.content {
-  align-items: center;
-}
-
-.content_left {
-  width: 605px;
 }
 
 @-webkit-keyframes rotate-in-2-cw {
@@ -150,9 +150,31 @@ body {
     opacity: 1;
   }
 }
+.content_right {
+  max-width: 32%;
+}
+
 .main-video {
+  max-width: 100%;
   -webkit-animation: rotate-in-2-cw 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: rotate-in-2-cw 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.first_middle {
+  margin-top: 157px;
+  margin-bottom: 264px;
+}
+
+.first_middle_left {
+  width: 52%;
+}
+
+.first_middle_right {
+  width: 42.2%;
+}
+
+.mid-img {
+  width: 100%;
 }
 
 .first_middle_header {
@@ -167,7 +189,7 @@ body {
 }
 
 .first_middle_cont {
-  width: 460px;
+  width: 95%;
   margin-bottom: 50px;
   font-family: "Open Sans";
   font-style: normal;
@@ -181,15 +203,6 @@ body {
 .middle_button {
   font-size: 16px;
   line-height: 22px;
-}
-
-.first_middle {
-  margin-top: 157px;
-  margin-bottom: 264px;
-}
-
-.first_middle_right {
-  width: 485px;
 }
 
 .txt-cntr-opc, .item_cont_big, .item_head_big, .item_cont, .item_head {
@@ -276,7 +289,7 @@ body {
 }
 
 .second_middle_left {
-  width: 548px;
+  width: 48%;
 }
 
 .second_middle_header {
@@ -292,7 +305,7 @@ body {
 
 .second_middle_cont {
   margin-bottom: 20px;
-  width: 460px;
+  width: 84%;
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 600;
@@ -311,7 +324,7 @@ footer {
 }
 
 .foot_item {
-  width: 362px;
+  width: 32%;
 }
 
 .foot_head {
@@ -361,4 +374,15 @@ footer {
   font-size: 14px;
   line-height: 16px;
   color: #ffffff;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .container {
+    flex-wrap: wrap;
+  }
+  .content_left, .content_right,
+.first_middle_left, .first_middle_right,
+.second_middle_left, .second_middle_right {
+    width: 100%;
+  }
 }/*# sourceMappingURL=style.css.map */
