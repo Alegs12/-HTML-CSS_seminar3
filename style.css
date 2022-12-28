@@ -39,11 +39,54 @@ body {
   line-height: 100%;
   color: #ffffff;
   padding: 40px 20px;
+  border-radius: 10px;
+  transition: background-color 0.5s;
 }
 
 .menu_link:hover {
   background-color: #3a68b8;
   border-radius: 10px;
+}
+
+.button {
+  padding: 15px 30px;
+  margin-right: 20px;
+  background: #3a68b8;
+  border-radius: 5px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 27px;
+  color: #ffffff;
+  transition: color, background-color 0.5s;
+}
+.button_hover:hover {
+  color: #3a68b8;
+  background-color: #fff;
+}
+
+.icon {
+  transition: all 0.3s;
+}
+.icon_hover:hover {
+  transform: scale(1.1);
+}
+
+.bar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 22px;
+  padding-top: 200px;
+  padding-bottom: 100px;
+}
+
+.flex_box {
+  display: flex;
+  justify-content: space-between;
 }
 
 .mini-header_cont {
@@ -79,41 +122,37 @@ body {
   margin-bottom: 50px;
 }
 
-.button {
-  padding: 15px 30px;
-  margin-right: 20px;
-  background: #3a68b8;
-  border-radius: 5px;
-  font-family: "Open Sans";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 27px;
-  color: #ffffff;
-}
-.button_hover:hover {
-  color: #3a68b8;
-  background-color: #fff;
-}
-
-.bar {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
+.content {
   align-items: center;
-  gap: 22px;
-  padding-top: 200px;
-  padding-bottom: 100px;
-}
-
-.flex_box {
-  display: flex;
-  justify-content: space-between;
 }
 
 .content_left {
   width: 605px;
+}
+
+@-webkit-keyframes rotate-in-2-cw {
+  0% {
+    transform: rotate(-45deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+@keyframes rotate-in-2-cw {
+  0% {
+    transform: rotate(-45deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+.main-video {
+  -webkit-animation: rotate-in-2-cw 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: rotate-in-2-cw 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 .first_middle_header {
