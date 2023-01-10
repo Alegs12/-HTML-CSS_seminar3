@@ -6,7 +6,7 @@ $txt-clr: #ffffff;
   padding: 0;
   outline: none;
   box-sizing: border-box;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 // html,
@@ -16,13 +16,13 @@ $txt-clr: #ffffff;
 
 body {
   background-color: #020a18;
-  padding: 3% 2% 0;
+  padding: 1% 2% 0;
 }
 
 .header {
   background-color: #0a121f;
   min-height: 100px;
-  margin-bottom: 160px;
+  margin-bottom: 20px;
 }
 
 .header-menu {
@@ -30,10 +30,16 @@ body {
   justify-content: center;
 }
 
+.bg-light {
+  --bs-bg-opacity: 1;
+  background-color: #020a18 !important;
+  margin-bottom: 100px;
+}
+
 .container {
   margin: 0 auto;
   max-width: 1146px;
-  padding: 0 3%;
+  padding: 0;
 }
 
 @mixin txt-open-sans($fw, $fs, $lh, $fc) {
@@ -53,7 +59,7 @@ body {
 }
 
 .menu_link:hover {
-  background-color: $button-color-bg;
+  background-color: $button-color-bg !important;
   border-radius: 10px;
 }
 
@@ -64,6 +70,7 @@ body {
   border-radius: 5px;
   @include txt-open-sans(600, 20px, 27px, $txt-clr);
   transition: color, background-color 0.5s;
+  border: 1px solid transparent;
 
   &_hover:hover {
     color: #3a68b8;
@@ -228,7 +235,7 @@ body {
 .grid-box {
   display: grid;
   grid-template-rows: repeat(3, 3fr);
-  grid-template-columns: repeat(3, 32%);
+  grid-template-columns: repeat(3, 31.5%);
   gap: 30px;
 }
 .item {
@@ -378,7 +385,7 @@ footer {
   .first_middle_right,
   .second_middle_left,
   .second_middle_right {
-    width: 83%;
+    width: 98%;
     justify-content: center;
   }
 
@@ -425,6 +432,10 @@ footer {
 }
 
 @media (max-width: 1024px) {
+  // body {
+  //   padding: 1% 2% 0;
+  // }
+
   .icon {
     width: 48%;
   }
@@ -437,7 +448,6 @@ footer {
   }
 
   .header {
-    margin-bottom: 85px;
     min-height: 65px;
   }
 
